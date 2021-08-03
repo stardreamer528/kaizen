@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Show mine"
+        android:id="@+id/show_yours"
+        android:checked="true" />
+    <item android:title="Maintenance"
+        android:id="@+id/show_maint"/>
+    <item android:title="ME"
+        android:id="@+id/show_ME"/>
+    <item android:title="R and D"
+        android:id="@+id/show_RnD"/>
+    <item android:title="Quality"
+        android:id="@+id/show_quality"/>
+    <item android:title="HR"
+        android:id="@+id/show_hr"/>
+    <item android:title="Admin"
+        android:id="@+id/show_admin"/>
+    <item android:title="Show all"
+        android:id="@+id/show_all"/>
+z</menu>

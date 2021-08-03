@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/bt_add_people"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFC107"
+            android:paddingBottom="20dp"
+            tools:ignore="MissingClass">
+
+            <LinearLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="32dp"
+                android:gravity="center_vertical"
+                app:layout_constraintBottom_toTopOf="@+id/select_pillar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="Kaizen"
+                    android:gravity="left"
+                    android:layout_marginLeft="25dp"
+                    android:textSize="32sp"
+                    android:layout_weight="6"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/profilePhoto"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="4dp"
+                    android:onClick="callProfileActivity"
+                    android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                    android:layout_weight="1"
+                    android:foregroundGravity="center_vertical|fill_vertical"
+                    app:srcCompat="@drawable/ic_baseline_send_24" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/select_pillar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="3dp"
+                android:text="Select Pillar"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/spinner_select_pillar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+            <Spinner
+                android:id="@+id/spinner_select_pillar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="30dp"
+                android:background="#009688"
+                android:backgroundTint="#009688"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="@+id/spinner_category"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_category"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/select_pillar" />
+
+
+            <com.tuneerkhargonkar.studios.kaizen.MultiSelectionSpinner
+                android:id="@+id/spinner_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="30dp"
+                android:background="#009688"
+                android:contentDescription="Select category"
+                android:dropDownWidth="wrap_content"
+                android:gravity="right"
+                android:spinnerMode="dropdown"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/categoryOfKaizen"
+                app:layout_constraintTop_toBottomOf="@+id/categoryOfKaizen"
+                tools:listheader="Select Category" />
+
+            <TextView
+                android:id="@+id/categoryOfKaizen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="112dp"
+                android:text="Category"
+                android:textColor="#000000"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toTopOf="@+id/spinner_category"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/select_pillar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/enter_machine_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="20dp"
+                android:ems="10"
+                android:hint="Write Machine Name"
+                android:inputType="textLongMessage|textAutoCorrect|textMultiLine"
+                android:paddingStart="4dp"
+                android:textColor="#000000"
+                android:textColorHint="#2E4053"
+                app:layout_constraintBottom_toTopOf="@+id/start_date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/machine_name"
+                app:layout_constraintTop_toBottomOf="@+id/machine_name" />
+
+            <TextView
+                android:id="@+id/machine_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="1dp"
+                android:inputType="textShortMessage"
+                android:text="Machine Name"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/enter_machine_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.135"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/kaizen_number" />
+
+            <TextView
+                android:id="@+id/start_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Start date"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/edit_text_startDate"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_machine_name" />
+
+            <EditText
+                android:id="@+id/edit_text_startDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:drawableStart="@android:drawable/ic_menu_my_calendar"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="Start Date"
+                android:inputType="date"
+                android:textColor="#000000"
+                android:textColorHint="#2E4053"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView_team_name"
+                app:layout_constraintEnd_toStartOf="@+id/edit_text_endDate"
+                app:layout_constraintStart_toStartOf="@+id/start_date"
+                app:layout_constraintTop_toBottomOf="@+id/start_date" />
+
+            <TextView
+                android:id="@+id/end_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="119dp"
+                android:text="End date"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/edit_text_endDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/edit_text_endDate"
+                app:layout_constraintTop_toBottomOf="@+id/enter_machine_name"
+                app:layout_constraintVertical_bias="0.92" />
+
+            <EditText
+                android:id="@+id/edit_text_endDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:clickable="false"
+                android:cursorVisible="false"
+                android:drawableStart="@android:drawable/ic_menu_my_calendar"
+                android:drawablePadding="5dp"
+                android:ems="10"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="End Date"
+                android:inputType="date"
+                android:textColor="#000000"
+                android:textColorHint="#2E4053"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/edit_text_startDate"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/edit_text_startDate" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout_enter_person_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="23dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@+id/textView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_team_name">
+
+                <EditText
+                    android:id="@+id/editTextPerson1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:ems="10"
+                    android:hint=" Name"
+                    android:inputType="textPersonName"
+                    android:paddingStart="4dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#2E4053" />
+
+                <EditText
+                    android:id="@+id/editTextPerson2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:ems="10"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:paddingStart="4dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#2E4053" />
+
+                <EditText
+                    android:id="@+id/editTextPerson3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="0dp"
+                    android:ems="10"
+                    android:hint="Name"
+                    android:inputType="textPersonName"
+                    android:paddingStart="4dp"
+                    android:textColor="#000000"
+                    android:textColorHint="#2E4053" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView_team_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="313dp"
+                android:layout_marginBottom="1dp"
+                android:text="Team Members"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout_enter_person_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_startDate" />
+
+            <Button
+                android:id="@+id/bt_addPeople"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="10dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:text="+"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout_enter_person_name"
+                app:layout_constraintEnd_toEndOf="@+id/edit_text_endDate"
+                app:layout_constraintTop_toTopOf="@+id/textView_team_name"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="4dp"
+                android:inputType="textLongMessage"
+                android:text="Idea of Kaizen"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/enter_idea_of_kaizen"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout_enter_person_name" />
+
+            <EditText
+                android:id="@+id/enter_idea_of_kaizen"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="25dp"
+                android:ems="10"
+                android:hint="Enter Idea"
+                android:inputType="textLongMessage|textAutoCorrect|textMultiLine"
+                android:paddingStart="4dp"
+                android:textColor="#000000"
+                android:textColorHint="#2E4053"
+                app:layout_constraintBottom_toTopOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="4dp"
+                android:text="Problem"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/enter_problem"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_idea_of_kaizen" />
+
+            <EditText
+                android:id="@+id/enter_problem"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:hint="Describe the problem"
+                android:inputType="textPersonName"
+                android:paddingStart="4dp"
+                android:textColor="#000000"
+                android:textColorHint="#2E4053"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:text="Analysis"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_problem" />
+
+            <EditText
+                android:id="@+id/enter_analysis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="25dp"
+                android:ems="10"
+                android:hint="Your analysis"
+                android:inputType="textPersonName"
+                android:paddingStart="4dp"
+                android:textColor="#000000"
+                android:textColorHint="#2E4053"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <ImageView
+                android:id="@+id/iv_before"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="50dp"
+                android:src="@drawable/kngine"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toStartOf="@+id/iv_after"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Add Images"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_analysis" />
+
+            <ImageView
+                android:id="@+id/iv_after"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="40dp"
+                android:src="@drawable/kngine"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_before"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="BEFORE"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/iv_before"
+                app:layout_constraintStart_toStartOf="@+id/iv_before"
+                app:layout_constraintTop_toBottomOf="@+id/iv_before" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="AFTER"
+                android:textColor="#000000"
+                app:layout_constraintEnd_toEndOf="@+id/iv_after"
+                app:layout_constraintStart_toStartOf="@+id/iv_after"
+                app:layout_constraintTop_toBottomOf="@+id/iv_after" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="25dp"
+                android:text="Counter Measures taken"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <EditText
+                android:id="@+id/enter_counter_measures"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="25dp"
+                android:ems="10"
+                android:hint="Write here"
+                android:inputType="textLongMessage|textAutoCorrect|textMultiLine"
+                android:paddingStart="4dp"
+                android:textColor="#000000"
+                android:textColorHint="#2E4053"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="Results"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_counter_measures" />
+
+            <EditText
+                android:id="@+id/enter_results"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="25dp"
+                android:ems="10"
+                android:hint="The final output"
+                android:inputType="textPersonName"
+                android:paddingStart="4dp"
+                android:textColor="#000000"
+                android:textColorHint="#2E4053"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/helpedBy">
+
+                <Button
+                    android:id="@+id/bt_refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_weight="1"
+                    android:text="Refresh Form"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/bt_submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="0dp"
+                    android:layout_weight="1"
+                    android:text="Submit"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+            <ScrollView
+                android:id="@+id/scrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbarFadeDuration="5"
+                android:scrollbars="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/helpedBy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_results">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/enter_results">
+
+                    <EditText
+                        android:id="@+id/CheckedBy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:paddingLeft="3dp"
+                        android:layout_weight="1"
+                        android:hint="Checked by"
+                        android:inputType="textPersonName"
+                        android:textColorHint="#2E4053"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName"
+                        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName" />
+
+                    <EditText
+                        android:id="@+id/ApprovedBY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:hint="Approved by"
+                        android:paddingLeft="3dp"
+                        android:inputType="textPersonName"
+                        android:textColorHint="#2E4053"
+                        app:layout_constraintBaseline_toBaselineOf="@+id/editTextTextPersonName2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/editTextTextPersonName2" />
+                </LinearLayout>
+            </ScrollView>
+
+            <EditText
+                android:id="@+id/kaizen_number"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="Enter kaizen number"
+                android:inputType="number|textPersonName"
+                android:paddingStart="4dp"
+                android:textColor="#000000"
+                android:textColorHint="#2E4053"
+                app:layout_constraintBottom_toTopOf="@+id/machine_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/spinner_select_pillar"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_category" />
+
+            <EditText
+                android:id="@+id/helpedBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="9dp"
+                android:layout_marginBottom="8dp"
+                android:ems="10"
+                android:hint="Assigned to"
+                android:inputType="textPersonName"
+                android:textColorHint="#2E4053"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/enter_results"
+                app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="#2E86C1"
+        app:itemIconTint="#F0F3F4"
+        app:itemTextColor="#F0F3F4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_add_people"
+        app:menu="@menu/bottom_navigation_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

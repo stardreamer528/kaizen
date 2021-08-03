@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "599780712176",
+    "project_id": "kaizen-89784",
+    "storage_bucket": "kaizen-89784.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599780712176:android:b301e5a809561190a8ec35",
+        "android_client_info": {
+          "package_name": "com.tuneerkhargonkar.studios.kaizen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599780712176-olssi3fd5jtsv5hk70k0le5bes1ql610.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ57Sztz3GqJm9vobNC4iiL7kVhJhG204"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599780712176-olssi3fd5jtsv5hk70k0le5bes1ql610.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

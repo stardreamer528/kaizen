@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Submit"
+        android:id="@+id/kaizenCreate"
+        android:icon="@drawable/ic_baseline_send_24"/>
+    <item android:title="View"
+        android:id="@+id/kaizenView"
+        android:icon="@drawable/ic_baseline_pageview_24"/>
+</menu>
