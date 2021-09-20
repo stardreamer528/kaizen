@@ -30,3 +30,8 @@ Screenshots of the app are attatched below<br>
 ## TechStack Used
 - Android Studio
 - Google Firebase
+
+### Developer
+>Tuneer Khargonkar | IN <br>
+> Reachout : <ktuneer@gmail.com> <br>
+> LinkedIn : <https://www.linkedin.com/in/tuneer-khargonkar/>
